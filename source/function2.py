@@ -3,6 +3,8 @@
 
 import numpy 
 
+from function import arcsin
+
 def launch_angle(ve_v0, alpha):
 	""" function to calculate launch angle from the vertical 
 	    given the ratio of ve/v0, and alpha
@@ -15,7 +17,8 @@ def launch_angle(ve_v0, alpha):
 	    Returns:
 	    phi = launch angle from vertical
 	"""
-	phi = (1 + alpha) * (numpy.sqrt(1-((alpha/(1+alpha))*(ve_v0)**2)))
+	sin_phi = (1 + alpha) * (numpy.sqrt(1-((alpha/(1+alpha))*(ve_v0)**2)))
+	phi = arcsin(sin_phi)
 	return phi
 
 x = 2
