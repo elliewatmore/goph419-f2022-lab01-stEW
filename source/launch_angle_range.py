@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from function2 import launch_angle
+from tests import launch_angle_tests
 
 def launch_angle_range(ve_v0,alpha,tol_alpha):
 	"""
@@ -11,9 +11,9 @@ def launch_angle_range(ve_v0,alpha,tol_alpha):
 	max_alt = ((1 + tol_alpha)*alpha)
 	min_alt = ((1 - tol_alpha)*alpha)
     
-	min_phi = launch_angle(ve_v0, max_alt)
+	min_phi = launch_angle_tests(ve_v0, max_alt)
 	phi_range.append(min_phi)
-	max_phi = launch_angle(ve_v0, min_alt)
+	max_phi = launch_angle_tests(ve_v0, min_alt)
 	phi_range.append(max_phi)
     
 	return(phi_range)
