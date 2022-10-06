@@ -6,6 +6,8 @@ import numpy as np
 def arcsin(x):
 	"""
 	"""
+	if x == 0:
+		return(0)
 	n = 1
 	result = 0 
 	fact_n = 1
@@ -23,7 +25,9 @@ def arcsin(x):
 	return(val)
       
 
-x = 1
-y = arcsin(x)
+x = [0,0.1,0.5,0.9,1]
+y = []
+for i in x:
+	val = arcsin(i)
+	y.append(val)
 print(y)
-
